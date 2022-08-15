@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enevt handlers</title>
+</head>
+<body>
+    <h1>Explore DOM Event</h1>
+    <button onclick="makeGreen()">Make Green</button>
+    <button id="makeYellow">Make Yellow</button>
+    <input id="user-email" type="email">
+    <script>
+        // option: 1
+        function makeGreen(){
+            document.body.style.backgroundColor = 'green';
+        }
+        // option :2
+        document.getElementById('makeYellow').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'Yellow';
+        })
+        // keyup event
+        document.getElementById('user-email').addEventListener('keyup', function(event){
+            console.log(event.target.value)
+        })
+    </script>
+</body>
+</html>
+
+assingment
+
+
+// 1. radianToDegree
+
+function radianToDegree(radian) {
+
+  const pi = 3.141592653589793238;
+  let degree = radian * (180 / pi);
+  degree = degree.toFixed(2);
+  
+  return degree;
+}
+
+let input = 10;
+//error massage code
+
+if (typeof input === 'string') {
+
+  console.log('Your input value is not correct')
+}
+else {
+
+  console.log(radianToDegree(input));
+}
+
+
+// 2.  isJavaScriptFile 
+
+function isJavaScriptFile(str) {
+
+  let resultshow = str.endsWith('.js');
+
+  if (resultshow) {
+
+      return true;
+
+  }
+
+  else {
+
+      return false;
+  }
+
+
+}
+let string = 'app.js';
+  
+  isJavaScriptFile('index.js')
+
+
+  // error massage code
+
+if (typeof string === 'number') {
+
+    console.log('Your input value is not correct');
+}
+else {
+
+    console.log(isJavaScriptFile(string))
+}
+
+// 3: oilPrice
+
+function oilPrice(dieselLtr, petrolLtr, octenLtr) {
+
+    const dieselPrice = dieselLtr * 114;
+    const petrolPrice = petrolLtr * 130;
+    const octenPrice = octenLtr * 135;
+
+    let total = dieselPrice + petrolPrice + octenPrice;
+
+    return total;
+}
+
+let dieselLtr = 1;
+let petrolLtr = 0;
+let octenLtr = 2;
+
+//error massage code
+
+if ((typeof dieselLtr === 'number') && (typeof petrolLtr === 'number') && (typeof octenLtr === 'number')) {
+
+    console.log(oilPrice(dieselLtr, petrolLtr, octenLtr))
+
+}
+
+else {
+
+    console.log('Your input value is not correct');
+}
+
+// 4: publicBusFare
+
+function publicBusFare(peoplequantity) {
+
+    const busCapacity = 50;
+    const microCapacity = 11;
+    const publicBusTicketRate = 250;
+
+
+    let busExtrapeopleQuantity = peoplequantity % busCapacity;
+    let microExtrapeopleQuantity = busExtrapeopleQuantity % microCapacity;
+    let totalPlublicrentCost = microExtrapeopleQuantity * publicBusTicketRate;
+
+
+    return totalPlublicrentCost;
+
+}
+
+let peoplequantity = 235;
+
+//error massage code
+
+if (typeof publicQuentity === 'string') {
+
+    console.log('Your input value is not correct')
+}
+else {
+
+    console.log(publicBusFare(peoplequantity));
+}
+
+
+//5:isBestFriend
+
+function isBestFriend(person_1, person_2) {
+
+    if ((person_1.name === person_2.friend) && (person_1.friend === person_2.name)) {
+
+        return true;
+    }
+
+    else {
+
+        return false;
+    }
+
+
+
+}
+
+let person_1 = { name: 'abul', friend: 'babul' };
+let person_2 = { name: 'babul', friend: 'abul' };
+
+//error massage code
+
+if ((typeof person_1 === 'object') && (typeof person_2 === 'object')) {
+
+    console.log(isBestFriend(person_1, person_2))
+}
+else {
+
+    console.log('Your input value is not correct')
+}
